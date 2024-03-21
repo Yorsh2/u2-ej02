@@ -1,0 +1,32 @@
+type Libro {
+  idL: ID!
+  titulo: String!
+  autor: String!
+  isbn: String!
+  year_publicacion: Int!
+}
+
+type Autor {
+  idA: ID!
+  nombre: String!
+  nacionalidad: String!
+}
+
+
+type Prestamo {
+  idP: ID!
+  libro_id: String!
+  usuario: String!
+  f_Prestamo: String!
+  f_Devolucion: String
+}
+
+type Query {
+  todosLosLibros: [Libro!]!
+  todosLosAutores: [Autor!]!
+  todosLosPrestamos: [Prestamo!]!
+  libroPorID(idL: ID!): [Libro]!
+
+}
+
+
